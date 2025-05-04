@@ -2,14 +2,18 @@ import statsapi
 from urllib.request import urlopen as uReq
 import json
 import time
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+from datetime import datetime
+import random
 
-
-def getData():
+def getData(city, mean, std):
     # 135 = Padres. 
     # Link for IDs: https://github.com/jasonlttl/gameday-api-docs/blob/master/team-information.md?utm_source=chatgpt.com
     # Get game today.
     while(True):
-        
+
+        # Proceed with data extraction
         game = statsapi.schedule(team=135) # <- switch ID here if you want to get a different game
         
         # Sleep for an hour if there is no game
@@ -25,7 +29,16 @@ def getData():
             # URL to request the live feed.
             url = "https://statsapi.mlb.com/api/v1.1/game/" + F"{game_id}" + "/feed/live"
 
+            totalDelay = 0
+            totalIterations = 0
+
             while(True):
+
+                # Get start time then sleep
+                totalIterations += 1
+                start = datetime.now()
+                time.sleep(random.gauss(mean, std))
+
                 uClient = uReq(url)  # Open up connection
                 byteFile = uClient.read()  # Grab the page
                 uClient.close()  # We are done with this (for now)
@@ -141,6 +154,21 @@ def getData():
                 print("Bases:", bases)
                 
                 print() 
-                time.sleep(2)
+                
+                # Get the latency statistics
+                end = datetime.now()
+                diff = end - start
+                secs = diff.seconds * 1000
+                micros = diff.microseconds / 1000
+                total = secs + micros
 
-                # print(jsonFile)
+                totalDelay += total
+
+                print(F"Delay from {city} at this iteration:", "{:.2f}".format(total), "ms")
+                print(F"Average delay:", "{:.2f}".format(totalDelay / totalIterations), "ms")
+
+                print() 
+
+                # Make the output look good.
+                time.sleep(2)
+            
