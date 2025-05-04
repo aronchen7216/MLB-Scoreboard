@@ -1,117 +1,174 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0a1a2f;
-    color: white;
-    max-width: 800px;
-    max-height: 800px;
-    align-content: center;
-    align-self: center;
-  }
-  
-  .scoreboard {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #0a1a2f;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    font-size: 1.2rem;
-    box-sizing: border-box;
-    border: 1px solid rgb(2, 2, 2);
-    border-radius: 1px;
-  }
-  
-  .top-bar,
-  .batter-line {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid hsl(0, 0%, 1%);
-    padding-bottom: 5px;
-  }
-  
+html, body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a1a2f;
+  color: white;
+  width: 800px;
+  height: 480px;
+  align-content: center;
+  align-self: center;
+}
 
-  .bases {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 0;
-    padding: 0;
-
-  }
+.scoreboard {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0a1a2f;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  border: 1px solid rgb(2, 2, 2);
+  border-radius: 1px;
+  justify-content: space-between;
+  height: 100%
   
-  .base {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: 2px solid white;
-    position: absolute;
-    transform: rotate(45deg);
-  }
+}
 
+.top-area {
+  height: 100px; /* Lock the total height for top section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #b7b8b9;
+}
 
-  .base-first { top: 50px; left: 95px; }
-  .base-second { top: 15px; left: 62px; }
-  .base-third { top: 50px; left: 25px; }
-
-  .base.occupied {
-    background-color: gold;
-  }
+.top-bar{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid hsl(0, 0%, 1%);
+  font-size: 2rem;
+  color: #011634;
   
-  
-  .score-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #090000;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom:0;
-    margin-top: 0;
-    box-sizing: border-box;
+}
+.batter-line {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid hsl(0, 0%, 1%);
+  font-size: 2rem;
+  color: #011634;
 
-  }
-  
+}
 
-  .info-line {
-    background-color: #b7b8b9;
-    color: #011634;
-    justify-content: space-between;
-    margin-top: 0px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    padding-right: 50px; 
-    border: #090000;
-    border-radius: 1px;
-  }
-  
-  .inning-number {
-    background-color: #003087;
-    font-size: 2rem;
-    font-weight: bold;
-    justify-content: space-between;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    padding: 10px 30px;
-    color: white;
-  }
-  
-  .game-state {
-    display: flex;
-    gap: 15px;
-    font-size: 1.2rem;
-    align-items: center;
-  }
+.middle-row {
+  display: flex;
+  align-items: flex-start;  /* Align top edges */
+  gap: 5px;                /* Optional spacing between bases and scoreboard */
+  margin-top: -100px;
+}
 
- 
-  .score-box.vertical {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
+
+
+
+
+.bases {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+
+}
+
+.base {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid white;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+
+.base-first  { top: 140px; left: 160px; }
+.base-second { top:  80px; left: 105px; }
+.base-third  { top: 140px; left:  50px; }
+
+.base.occupied {
+  background-color: gold;
+}
+
+
+.score-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #090000;
+  color: black;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom:0;
+  margin-top: 0;
+  box-sizing: border-box;
+  height: 150px;
+
+}
+
+
+.info-line {
+  background-color: #b7b8b9;
+  color: #011634;
+  justify-content: space-between;
+  margin-top: 0px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding-right: 50px; 
+  border: #090000;
+  border-radius: 1px;
+  padding: 0 5px;
+  height: 70px;
+}
+
+
+
+.inning-number {
+  background-color: #003087;
+  font-size: 2rem;
+  font-weight: bold;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 30px 30px;
+  color: #003087;
+}
+
+/* .mlb-logo {
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+.game-state {
+  display: flex;
+  gap: 15px;
+  font-size: 1.3rem;
+  align-items: center;
+}
+
+
+.score-box.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.mlb-overlay-logo {
+  position: absolute;
+  bottom: 8px;       /* tweak to position exactly */
+  left: 8px;
+  font-size: 55px;
+  z-index: 9999;
+  pointer-events: none;  /* lets clicks pass through */
+}

@@ -5,7 +5,8 @@ import json
 import time
 
 app = Flask(__name__)
-TEAM_ID = 135  # Padres
+
+TEAM_ID = 108
 
 @app.route('/')
 def index():
@@ -52,6 +53,9 @@ def get_game_data():
         pitcher = jsonFile["liveData"]["plays"]["currentPlay"]["matchup"]["pitcher"]["fullName"]
         batter = jsonFile["liveData"]["plays"]["currentPlay"]["matchup"]["batter"]["fullName"]
 
+        onDeck = jsonFile["liveData"]["linescore"]["offense"]["onDeck"]["fullName"]
+        inHole = jsonFile["liveData"]["linescore"]["offense"]["inHole"]["fullName"]
+
         info = jsonFile["liveData"]["boxscore"].get("info", [])
         pitcherLastName = pitcher.split(" ")[-1]
         pitch_count = "?"
@@ -85,7 +89,9 @@ def get_game_data():
             "outs": count["outs"],
             "bases": bases,
             "homeAbbr":homeAbbr,
-            "awayAbbr":awayAbbr
+            "awayAbbr":awayAbbr,
+            "onDeck": onDeck,
+            "inHole": inHole
         })
 
     except Exception as e:
