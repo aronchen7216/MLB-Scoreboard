@@ -3,8 +3,8 @@ html, body {
   font-family: Arial, sans-serif;
   background-color: #0a1a2f;
   color: white;
-  width: 750px;
-  height: 450px;
+  width: 780px;
+  height: 470px;
   align-content: center;
   align-self: center;
 }
@@ -57,7 +57,7 @@ html, body {
   display: flex;
   align-items: flex-start;  /* Align top edges */
   gap: 5px;                /* Optional spacing between bases and scoreboard */
-  margin-top: -100px;
+  margin-top: -95px;
 }
 
 
@@ -166,7 +166,7 @@ html, body {
 
 .mlb-overlay-logo {
   position: absolute;
-  bottom: 35px;       /* tweak to position exactly */
+  bottom: 20px;       /* tweak to position exactly */
   left: 8px;
   font-size: 55px;
   z-index: 9999;
