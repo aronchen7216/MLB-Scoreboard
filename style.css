@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a1a2f;
+    color: white;
+    max-width: 800px;
+    max-height: 800px;
+    align-content: center;
+    align-self: center;
+  }
+  
+  .scoreboard {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0a1a2f;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    border: 1px solid rgb(2, 2, 2);
+    border-radius: 1px;
+  }
+  
+  .top-bar,
+  .batter-line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid hsl(0, 0%, 1%);
+    padding-bottom: 5px;
+  }
+  
+
+  .bases {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  .base {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid white;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+
+
+  .base-first { top: 50px; left: 95px; }
+  .base-second { top: 15px; left: 62px; }
+  .base-third { top: 50px; left: 25px; }
+
+  .base.occupied {
+    background-color: gold;
+  }
+  
+  
+  .score-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #090000;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom:0;
+    margin-top: 0;
+    box-sizing: border-box;
+
+  }
+  
+
+  .info-line {
+    background-color: #b7b8b9;
+    color: #011634;
+    justify-content: space-between;
+    margin-top: 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding-right: 50px; 
+    border: #090000;
+    border-radius: 1px;
+  }
+  
+  .inning-number {
+    background-color: #003087;
+    font-size: 2rem;
+    font-weight: bold;
+    justify-content: space-between;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    color: white;
+  }
+  
+  .game-state {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2rem;
+    align-items: center;
+  }
+
+ 
+  .score-box.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }

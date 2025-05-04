@@ -1,0 +1,47 @@
+/* MLB Team Background Color Classes */
+.team[class*="team-bg-"] {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    min-height: 100%;
+    margin:0;
+    border: 1px solid rgb(5, 5, 5);
+    border-radius: 1px;
+  }
+  
+  .team-bg-AZ { background-color: #A71930; color: #FFFFFF; }
+  .team-bg-ATL { background-color: #CE1141; color: #FFFFFF; }
+  .team-bg-BAL { background-color: #DF4601; color: #000000; }
+  .team-bg-BOS { background-color: #BD3039; color: #FFFFFF; }
+  .team-bg-CHC { background-color: #0E3386; color: #FFFFFF; }
+  .team-bg-CWS { background-color: #27251F; color: #FFFFFF; }
+  .team-bg-CIN { background-color: #C6011F; color: #FFFFFF; }
+  .team-bg-CLE { background-color: #0C2340; color: #FFFFFF; }
+  .team-bg-COL { background-color: #33006F; color: #FFFFFF; }
+  .team-bg-DET { background-color: #0C2340; color: #FFFFFF; }
+  .team-bg-HOU { background-color: #EB6E1F; color: #000000; }
+  .team-bg-KC  { background-color: #004687; color: #FFFFFF; }
+  .team-bg-LAA { background-color: #BA0021; color: #FFFFFF; }
+  .team-bg-LAD { background-color: #005A9C; color: #FFFFFF; }
+  .team-bg-MIA { background-color: #00A3E0; color: #000000; }
+  .team-bg-MIL { background-color: #12284B; color: #FFFFFF; }
+  .team-bg-MIN { background-color: #002B5C; color: #FFFFFF; }
+  .team-bg-NYM { background-color: #002D72; color: #FFFFFF; }
+  .team-bg-NYY { background-color: #132448; color: #FFFFFF; }
+  .team-bg-OAK { background-color: #003831; color: #FFFFFF; }
+  .team-bg-PHI { background-color: #E81828; color: #FFFFFF; }
+  .team-bg-PIT { background-color: #FDB827; color: #000000; }
+  .team-bg-SD { background-color: #2F241D; color: #FFFFFF; }
+  .team-bg-SEA { background-color: #005C5C; color: #FFFFFF; }
+  .team-bg-SFG { background-color: #FD5A1E; color: #000000; }
+  .team-bg-STL { background-color: #C41E3A; color: #FFFFFF; }
+  .team-bg-TBR { background-color: #092C5C; color: #FFFFFF; }
+  .team-bg-TEX { background-color: #003278; color: #FFFFFF; }
+  .team-bg-TOR { background-color: #134A8E; color: #FFFFFF; }
+  .team-bg-WSH { background-color: #AB0003; color: #FFFFFF; }
+  

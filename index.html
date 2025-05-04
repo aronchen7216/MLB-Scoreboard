@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLB Scoreboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="http://daigofuji.github.io/bbclub-font/css/bbclub-font.css">
+  <link rel="stylesheet" href="/static/team_colors.css" />
+
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <div class="scoreboard">
+    <div class="top-bar">
+      <span id="pitcher">Pitcher</span>
+      <span id="pitch-count">P:0</span>
+    </div>
+    <div class="batter-line">
+      <span id="batter">Batter</span>
+      <span id="batting-stats">0-FOR-0</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; width: 100%;">
+      <div class="bases" style="flex: 0 0 30%; max-width: 30%;">
+        <div class="base base-first" id="base-first"></div>
+        <div class="base base-second" id="base-second"></div>
+        <div class="base base-third" id="base-third"></div>
+      </div>
+    
+      <div class="score-box vertical" style="flex: 1;">
+        <div id="away" class="team away">
+          <i id="away-logo"></i>
+          <span id="away-team">Away Team</span>
+          <span id="away-score">0</span>
+        </div>
+        <div id="home" class="team home">
+          <i id="home-logo"></i>
+          <span id="home-team">Home Team</span>
+          <span id="home-score">0</span>
+        </div>
+      </div>
+    </div>    
+    <div class="info-line">
+      <div class="inning-number">0</div>
+      <div class="game-state">
+        <span id="inning">INNING</span>
+        <span id="count">0-0</span>
+        <span id="outs">0 OUT</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
