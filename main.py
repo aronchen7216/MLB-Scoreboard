@@ -10,6 +10,20 @@ import random
 
 import backend
 
+
+# Default Values
+DEFAULT_TEAM = 135
+DEFAULT_CITY = "San Diego, California"
+
+# Prompts the user to choose their team
+while True:
+    s = input(f"Please enter a team ID: ")
+    try:
+        DEFAULT_TEAM = int(s)
+        break
+    except ValueError:
+        print("Not a valid number, try again")
+
 # Process City Argument. Default is San Diego. In quotes, put in city folowed by a comma then state or country.
 # Examples argument: "San Diego, California". "Berlin, Germany"
 if len(sys.argv) == 2:
@@ -33,4 +47,4 @@ mean = distance / 1000
 std = mean / 4
 
 if __name__ == "__main__":
-    backend.getData(city, mean, std)
+    backend.getData(city, mean, std, DEFAULT_TEAM)

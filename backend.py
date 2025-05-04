@@ -7,14 +7,14 @@ from geopy.distance import geodesic
 from datetime import datetime
 import random
 
-def getData(city, mean, std):
+def getData(city, mean, std, DEFAULT_TEAM):
     # 135 = Padres. 
     # Link for IDs: https://github.com/jasonlttl/gameday-api-docs/blob/master/team-information.md?utm_source=chatgpt.com
     # Get game today.
     while(True):
 
         # Proceed with data extraction
-        game = statsapi.schedule(team=135) # <- switch ID here if you want to get a different game
+        game = statsapi.schedule(team=DEFAULT_TEAM) # <- switch ID here if you want to get a different game
         
         # Sleep for an hour if there is no game
         if not game:
@@ -170,5 +170,4 @@ def getData(city, mean, std):
                 print() 
 
                 # Make the output look good.
-                time.sleep(2)
-            
+                time.sleep(2)            
